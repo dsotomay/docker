@@ -1,0 +1,4 @@
+docker pull phpmyadmin
+docker network create warden_bridge
+docker run -d -p 8081:80 --name roach-warden --network warden_bridge phpmyadmin/phpmyadmin
+docker network connect warden_bridge spawning-pool

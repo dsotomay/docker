@@ -1,0 +1,10 @@
+FROM ruby
+RUN apt-get update -y && apt-get upgrade -y && apt-get install \
+	nodejs -y && \
+	gem install rails && \
+	gem install bundler
+ONBUILD COPY app/ /opt/app
+ONBUILD RUN bundle install && \
+			rake db:migrate && \
+			rake db:setup
+WORKDIR	/opt/app

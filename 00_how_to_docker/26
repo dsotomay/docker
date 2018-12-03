@@ -1,0 +1,7 @@
+docker service create -d \
+--env OC_USERNAME=dysotoma \
+--env OC_PASSWD=dysotoma \
+--network overmind \
+--replicas 2 \
+--name engineering-bay \
+42school/engineering-bay

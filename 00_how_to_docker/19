@@ -1,0 +1,7 @@
+docker-machine ssh Char
+#cd ..
+#mkdir python
+docker-machine scp app.py Char:/home/python
+docker run -d -t -p 3000:3000 -v /home/python:/root --name Arbathur python:2-slim
+docker exec Arbathur pip install flask
+docker exec --env FLASK_APP=/root/app.py Arbathur flask run --host=0.0.0.0 --port=3000

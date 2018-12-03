@@ -1,0 +1,4 @@
+docker swarm join-token #if active session else ssh into manager and execute
+#copy the output
+docker-machine ssh Aiur
+#past the output and hit enter
